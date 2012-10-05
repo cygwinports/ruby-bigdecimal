@@ -1,0 +1,8 @@
+NAME="ruby-bigdecimal"
+VERSION=1.1.0
+RELEASE=1
+CATEGORY="Ruby"
+SUMMARY="Ruby arbitrary-precision floating-point number module"
+DESCRIPTION="This Ruby library provides an arbitrary-precision decimal
+floating-point number class."
+inherit rubygem
