@@ -7,3 +7,13 @@ CATEGORY="Ruby"
 SUMMARY="Ruby arbitrary-precision floating-point number module"
 DESCRIPTION="This Ruby library provides an arbitrary-precision decimal
 floating-point number class."
+
+PKG_NAMES="${NAME} ${NAME}-doc"
+ruby_bigdecimal_CONTENTS="--exclude=sample ${RUBYGEM_EXTDIR#/} ${RUBYGEM_INSTDIR#/} ${RUBYGEM_SPEC#/}"
+ruby_bigdecimal_doc_CONTENTS="${RUBYGEM_DOCDIR#/} ${RUBYGEM_INSTDIR#/}/sample"
+
+src_install() {
+	cd ${S}
+	rubygem_install
+	rm -f ${D}${RUBYGEM_INSTDIR}/*.[ch]
+}
